@@ -11,7 +11,7 @@ def index(request):
 
     article_list=Article.objects.all()
 
-    page_robot= Paginator(article_list,3)
+    page_robot= Paginator(article_list,6)
     page_num = request.GET.get("page")
     try:
         article_list=page_robot.page(page_num)
