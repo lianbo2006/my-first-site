@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^register/$', index_register, name="register"),
     url(r'^logout/', logout, {'next_page': '/index'}, name="logout"),
     url(r'^vote/(?P<id>\d+)/$', vote, name="vote"),
-    url(r'^', index, name="index"),
+    url(r'^$', index, name="index"),
 ]

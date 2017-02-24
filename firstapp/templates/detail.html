@@ -56,10 +56,58 @@
             <span class="" style="color:rgb(226, 226, 226)">|</span>
             <i class="icon grey checkmark"></i>
             <span style="color:#bbbbbb">{{ like_counts }} people got it</span>
+            {% if article.id == 14 %}
+            <div style="text-align:center">
+              <button onclick="playPause()">播放/暂停</button>
+              <button onclick="makeBig()">放大</button>
+              <button onclick="makeSmall()">缩小</button>
+              <button onclick="makeNormal()">普通</button>
+              <br>
+              <video id="video1" width="420" controls preload=auto>
+                <source src="{% static 'videos/111.mp4' %}" type="video/mp4">
+                您的浏览器不支持 HTML5 video 标签。
+              </video>
+            </div>
+
+            <script>
+            var myVideo=document.getElementById("video1");
+            var vidWidth=420;
+
+            function playPause()
+            {
+            	if (myVideo.paused)
+            	  myVideo.play();
+            	else
+            	  myVideo.pause();
+            }
+
+            	function makeBig()
+            {
+            	vidWidth=vidWidth+120;
+            	myVideo.width=vidWidth;
+            }
+
+            	function makeSmall()
+            {
+            	vidWidth=vidWidth-120;
+            	myVideo.width=vidWidth;
+            }
+
+            	function makeNormal()
+            {
+            	myVideo.width=420;
+            }
+            </script>
+
+            {% endif %}
 
             <p>
                 {{ article.content }}
             </p>
+            {% if article.id == 14 %}
+            <img class="ui centered medium image" src="{% static 'images/泡泡机器人公众号.jpg' %}">
+
+            {% endif %}
             <div class="ui divider"></div>
 
             <form class="ui form" action="{% url 'vote' article.id %}" method="post">
