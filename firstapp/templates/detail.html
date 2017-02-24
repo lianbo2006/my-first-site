@@ -64,9 +64,9 @@
               <button onclick="makeNormal()">普通</button>
               <br>
               <video id="video1" width="420" controls preload=auto>
-                <source src="{% static 'videos/111.mp4' %}" type="video/mp4">
-                您的浏览器不支持 HTML5 video 标签。
+                <source src={% static 'videos/111.mp4' %} type="video/mp4">
               </video>
+              <embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=6293256&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
             </div>
 
             <script>
